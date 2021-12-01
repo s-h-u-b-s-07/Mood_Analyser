@@ -24,7 +24,7 @@ public class MoodAnalyser {
                 return "HAPPY";
             }
         }catch(Exception ex) {
-            return "Empty String";
+            return "HAPPY";
         }
     }
 
