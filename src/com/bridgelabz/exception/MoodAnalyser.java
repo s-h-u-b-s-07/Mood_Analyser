@@ -1,21 +1,23 @@
 package com.bridgelabz.exception;
 
 public class MoodAnalyser {
+    public static String message;
     public static MoodAnalyser instance;
-    private String message;
 
-    private MoodAnalyser() {
+
+    MoodAnalyser(String message) {
+        this.message = message;
     }
-    public static MoodAnalyser getInstance() {
 
+    public static MoodAnalyser getInstance() {
         if (instance == null) {
-            instance = new MoodAnalyser();
+            instance = new MoodAnalyser(message);
         }
         return instance;
     }
 
-    public String analyse_Mood(String message) {
-        if (message.contains(message)) {
+    public String analyse_Mood() {
+        if (message.toLowerCase().contains("sad")) {
             message = "SAD";
             System.out.println("SAD");
         }else {
