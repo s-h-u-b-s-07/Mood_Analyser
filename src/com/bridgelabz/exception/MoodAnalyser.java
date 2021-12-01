@@ -17,13 +17,15 @@ public class MoodAnalyser {
     }
 
     public String analyse_Mood() {
-        if (message.toLowerCase().contains("sad")) {
-            message = "SAD";
-            System.out.println("SAD");
-        }else {
-            message = "HAPPY";
-            System.out.println("HAPPY");
+        try {
+            if(message.toLowerCase().contains("sad")) {
+                return "SAD";
+            }else {
+                return "HAPPY";
+            }
+        }catch(Exception ex) {
+            return "Empty String";
         }
-        return message;
     }
+
 }
