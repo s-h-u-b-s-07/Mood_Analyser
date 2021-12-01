@@ -6,8 +6,8 @@ public class MoodAnalyser {
 
     private MoodAnalyser() {
     }
-
     public static MoodAnalyser getInstance() {
+
         if (instance == null) {
             instance = new MoodAnalyser();
         }
