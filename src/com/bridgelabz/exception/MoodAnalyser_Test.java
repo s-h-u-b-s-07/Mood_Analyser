@@ -35,5 +35,4 @@ public class MoodAnalyser_Test {
         } catch (MoodAnalysisException e) {
         }
     }
-
 }

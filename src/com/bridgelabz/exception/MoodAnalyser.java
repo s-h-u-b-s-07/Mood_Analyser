@@ -1,5 +1,7 @@
 package com.bridgelabz.exception;
 
+import com.bridgelabz.exception.MoodAnalysisException.Mood;
+
 public class MoodAnalyser {
     public static String message;
     public static MoodAnalyser instance;
@@ -18,22 +20,24 @@ public class MoodAnalyser {
     public String analyse_Mood() throws MoodAnalysisException {
         try {
             if (message == null) {
-                throw new MoodAnalysisException(MoodAnalysisException.Mood.NULL_MOOD, "Null MooD");
+                throw new MoodAnalysisException(Mood.NULL_MOOD, "Null MooD");
             }
-
-            if (message.toLowerCase().contains("sad")) {
+            if (message == "SAD") {
+                throw new MoodAnalysisException(Mood.SAD_MOOD, "SAD MOOD");
+            }
+            if (message == "SAD") {
+                throw new MoodAnalysisException(Mood.HAPPY_MOOD, "HAPPY MOOD");
+            }
+            if (message.toLowerCase().contains("sad"))
 
                 message = "SAD";
-            }else {
+            else
                 message = "HAPPY";
-                return message;
-            }
+            return message;
         } catch (MoodAnalysisException e) {
 
             System.out.print(e);
         }
         return message;
     }
-
-
 }
